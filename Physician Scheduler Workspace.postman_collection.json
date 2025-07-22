@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "188a90f8-f437-4919-9f05-3fdd57771435",
+		"name": "Physician Scheduler Workspace",
+		"description": "Postman collection for Nextera Scheduler Core APIs.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39369066"
+	},
+	"item": [
+		{
+			"name": "Clinics",
+			"item": [
+				{
+					"name": "POST Add Clinic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Nextera Medical Center 3\",\n  \"location\": \"Cantt Lahore\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/clinics",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"clinics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Clinics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/clinics",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"clinics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Physicians",
+			"item": [
+				{
+					"name": "POST Add Physician",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Dr. tipu butt\",\n  \"specialization\": \"Gynac\",\n  \"clinic\": \"15c7cce1-e0a9-4771-a80a-3c34067defcc\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/physicians",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"physicians"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Physicians",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/physicians",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"physicians"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "POST Add Patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Irfan Khann\",\n  \"contact\": \"+92-300-1234547\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/patients",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/patients",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Billing Rules",
+			"item": [
+				{
+					"name": "POST Add Billing Rule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"physician\": \"5fa21fe6-0f92-4a99-ba94-ae73039643d4\",\n  \"gap_before_minutes\": 5,\n  \"gap_after_minutes\": 5,\n  \"min_gap_between_appointments\": 10\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/billing-rules",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"billing-rules"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Availability",
+			"item": [
+				{
+					"name": "POST Add Availability",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clinic\": \"15c7cce1-e0a9-4771-a80a-3c34067defcc\",\n  \"physician\": \"5fa21fe6-0f92-4a99-ba94-ae73039643d4\",\n  \"date\": \"2025-09-25\",\n  \"start_time\": \"04:00:00.000Z\",\n  \"end_time\": \"05:30:00.000Z\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/availabilities",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"availabilities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "POST Add Appointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"clinic\": \"15c7cce1-e0a9-4771-a80a-3c34067defcc\",\n  \"physician\": \"5fa21fe6-0f92-4a99-ba94-ae73039643d4\",\n  \"patient\": \"4bece9cf-7339-4030-ae18-77f796f2ef4b\",\n  \"start_time\": \"2025-09-25T04:45:00.000Z\",\n  \"end_time\": \"2025-09-25T04:50:00.000Z\",\n  \"status\": \"scheduled\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/appointments",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scheduler",
+			"item": [
+				{
+					"name": "Get Recommended Slots",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clinic\": \"15c7cce1-e0a9-4771-a80a-3c34067defcc\",\r\n  \"physician\": \"5fa21fe6-0f92-4a99-ba94-ae73039643d4\",\r\n  \"patient\": \"4bece9cf-7339-4030-ae18-77f796f2ef4b\",\r\n  \"date\": \"2025-09-25\",\r\n  \"duration\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/scheduler/recommend",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"scheduler",
+								"recommend"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000/api"
+		}
+	]
+}
